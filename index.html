@@ -4,45 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startup Mentor</title>
+    <!-- Futuristic Tech Noir Icon -->
+    <link rel="icon" href="https://fav.farm/✨">
+    <link rel="apple-touch-icon" href="https://fav.farm/✨">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;700&display=swap');
-        
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-        }
-        .noir-card {
-            border: 4px solid #fff;
-            box-shadow: 10px 10px 0px #ff0000;
-            background: #1a1a1a;
-        }
-        .comic-title {
-            font-family: 'Bangers', cursive;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            background: #fff;
-            color: #000;
-            padding: 5px 15px;
-            display: inline-block;
-            transform: rotate(-2deg);
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;900&display=swap');
+        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Inter', sans-serif; }
+        .noir-title { font-family: 'Permanent Marker', cursive; color: #a855f7; text-shadow: 3px 3px 0px #22c55e; }
+        .mission-box { border: 2px solid #3f3f46; border-left: 8px solid #a855f7; background: linear-gradient(145deg, #18181b, #09090b); }
+        .neon-btn { background-color: #a855f7; box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); }
+        .neon-btn:hover { background-color: #22c55e; box-shadow: 0 0 20px rgba(34, 197, 94, 0.6); }
     </style>
 </head>
-<body class="p-8">
-    <div class="max-w-2xl mx-auto">
-        <div class="mb-8">
-            <h1 class="comic-title text-4xl mb-4">English Startup Mentor</h1>
-            <p class="text-xl italic border-l-4 border-red-600 pl-4">"The world of tech waits for no one. Let's get to work."</p>
+<body class="p-6 min-h-screen flex flex-col items-center justify-center">
+    <div class="max-w-md w-full">
+        <div class="mb-10 text-center">
+            <h1 class="noir-title text-5xl font-black italic uppercase leading-tight mb-2">
+                Startup Mentor
+            </h1>
+            <p class="text-zinc-500 text-xs tracking-[0.3em] uppercase">Digital Authority System v1.0</p>
         </div>
 
-        <div class="noir-card p-6 mb-6">
-            <h2 class="text-2xl font-bold mb-4 underline decoration-red-600">MISSION BRIEF</h2>
-            <p class="mb-4 text-gray-300">Ready to build your startup? I'm here to help you master the language of tech and the art of the hustle.</p>
-            <button class="bg-white text-black font-bold py-2 px-6 hover:bg-red-600 hover:text-white transition-colors duration-300">
-                START LEARNING ->
-            </button>
+        <div class="mission-box p-8 shadow-2xl mb-6 text-center">
+            <h2 class="text-xl font-black uppercase tracking-widest text-green-400 mb-4 flex items-center justify-center">
+                <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                System Ready
+            </h2>
+            <p class="text-zinc-400 leading-relaxed mb-8 text-md italic">
+                "In the startup world, privacy is power. Use your own key. Build your own future."
+            </p>
+            
+            <a href="https://t.me/+fQ_Wkof7_GoxYmU8" class="neon-btn text-black font-black py-4 px-6 uppercase tracking-widest text-center block transition-all duration-300 text-lg">
+                Enter Community →
+            </a>
+        </div>
+
+        <!-- API KEY SECTION: For User Autonomy -->
+        <div class="bg-zinc-900 border border-zinc-800 p-4 rounded-lg">
+            <label class="text-[10px] uppercase text-zinc-500 font-bold tracking-widest">User API Authentication</label>
+            <input type="password" id="userKey" placeholder="Enter your API key..." 
+                class="w-full bg-black border border-zinc-700 p-3 mt-2 text-green-400 font-mono text-sm focus:border-purple-500 outline-none rounded">
         </div>
     </div>
 </body>
