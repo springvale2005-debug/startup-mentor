@@ -4,48 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Startup Mentor</title>
-    <!-- Futuristic Tech Noir Icon -->
-    <link rel="icon" href="https://fav.farm/✨">
-    <link rel="apple-touch-icon" href="https://fav.farm/✨">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlN0YXJ0dXAgTWVudG9yIiwKICAic2hvcnRfbmFtZSI6ICJNZW50b3IiLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJodHRwczovL2Nkbi1pY29ucy1wbmcuZmxhdGljb24uY29tLzUxMi8zMjczLzMyNzM2NjIucG5nIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiwKICAgICAgInNpemVzIjogIjUxMng1MTIiCiAgICB9CiAgXSwKICAic3RhcnRfdXJsIjogIi4iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwMDAwMDAiLAogICJ0aGVtZV9jb2xvciI6ICIjMDAwMDAwIgp9">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;900&display=swap');
-        body { background-color: #0d0d0d; color: #e0e0e0; font-family: 'Inter', sans-serif; }
-        .noir-title { font-family: 'Permanent Marker', cursive; color: #a855f7; text-shadow: 3px 3px 0px #22c55e; }
-        .mission-box { border: 2px solid #3f3f46; border-left: 8px solid #a855f7; background: linear-gradient(145deg, #18181b, #09090b); }
-        .neon-btn { background-color: #a855f7; box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); }
-        .neon-btn:hover { background-color: #22c55e; box-shadow: 0 0 20px rgba(34, 197, 94, 0.6); }
+        body { background-color: #000; color: #d8b4fe; font-family: 'Courier New', Courier, monospace; }
+        .tech-noir-border { border: 2px solid #a855f7; box-shadow: 0 0 15px #a855f7; }
+        .neon-text { text-shadow: 0 0 5px #22c55e; }
     </style>
 </head>
-<body class="p-6 min-h-screen flex flex-col items-center justify-center">
-    <div class="max-w-md w-full">
-        <div class="mb-10 text-center">
-            <h1 class="noir-title text-5xl font-black italic uppercase leading-tight mb-2">
-                Startup Mentor
-            </h1>
-            <p class="text-zinc-500 text-xs tracking-[0.3em] uppercase">Digital Authority System v1.0</p>
-        </div>
+<body class="p-6 min-h-screen flex flex-col items-center">
 
-        <div class="mission-box p-8 shadow-2xl mb-6 text-center">
-            <h2 class="text-xl font-black uppercase tracking-widest text-green-400 mb-4 flex items-center justify-center">
-                <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-                System Ready
-            </h2>
-            <p class="text-zinc-400 leading-relaxed mb-8 text-md italic">
-                "In the startup world, privacy is power. Use your own key. Build your own future."
-            </p>
-            
-            <a href="https://t.me/+fQ_Wkof7_GoxYmU8" class="neon-btn text-black font-black py-4 px-6 uppercase tracking-widest text-center block transition-all duration-300 text-lg">
-                Enter Community →
-            </a>
-        </div>
+    <h1 class="text-5xl font-black italic text-purple-500 mb-2 uppercase tracking-tighter">STARTUP MENTOR</h1>
+    <p class="text-xs tracking-widest text-gray-400 mb-8 uppercase">Digital Authority System v1.0</p>
 
-        <!-- API KEY SECTION: For User Autonomy -->
-        <div class="bg-zinc-900 border border-zinc-800 p-4 rounded-lg">
-            <label class="text-[10px] uppercase text-zinc-500 font-bold tracking-widest">User API Authentication</label>
-            <input type="password" id="userKey" placeholder="Enter your API key..." 
-                class="w-full bg-black border border-zinc-700 p-3 mt-2 text-green-400 font-mono text-sm focus:border-purple-500 outline-none rounded">
+    <div class="tech-noir-border bg-black p-6 w-full max-w-md rounded-none mb-6">
+        <div id="status-light" class="flex items-center gap-2 mb-4">
+            <div class="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
+            <span class="text-green-500 font-bold uppercase text-sm neon-text">System Ready</span>
         </div>
+        
+        <p class="italic text-gray-300 mb-6 leading-relaxed">
+            "In the startup world, privacy is power. Use your own key. Build your own future."
+        </p>
+
+        <button id="start-btn" class="w-full bg-green-500 text-black font-black py-4 uppercase text-xl hover:bg-green-400 transition-all flex items-center justify-center gap-2">
+            START LEARNING →
+        </button>
     </div>
+
+    <div id="chat-terminal" class="hidden w-full max-w-md bg-zinc-900 p-4 border border-purple-900 mb-6 h-48 overflow-y-auto text-sm">
+        <p class="text-green-400">>> Initialize interaction...</p>
+    </div>
+
+    <div class="w-full max-w-md p-4 bg-zinc-950 border border-zinc-800">
+        <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">User API Authentication</label>
+        <input type="password" id="api-key" placeholder="Enter your API key..." 
+               class="w-full bg-black border border-zinc-700 p-3 text-green-400 focus:outline-none focus:border-purple-500">
+    </div>
+
+    <script>
+        const startBtn = document.getElementById('start-btn');
+        const terminal = document.getElementById('chat-terminal');
+
+        startBtn.onclick = () => {
+            const key = document.getElementById('api-key').value;
+            if(!key) { alert('Please enter your API key to begin.'); return; }
+            
+            terminal.classList.remove('hidden');
+            startBtn.innerText = "LISTENING...";
+            
+            // Web Speech Recognition
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = 'en-US';
+            recognition.start();
+
+            recognition.onresult = (event) => {
+                const speechToText = event.results[0][0].transcript;
+                terminal.innerHTML += `<p class="text-white mt-2">USER: ${speechToText}</p>`;
+                startBtn.innerText = "START LEARNING →";
+                
+                // Here we would call the AI with the API key
+                terminal.innerHTML += `<p class="text-purple-400 mt-1">MENTOR: I hear you. Let's build that business plan.</p>`;
+            };
+        };
+    </script>
 </body>
 </html>
